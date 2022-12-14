@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import './style.css';
-import ReactDOM from 'react-dom';
+import React, {useState} from 'react'
+import ReactDOM from 'react-dom'
+import './style.css'
 
-function Hello() {
-  const [name, setName] = useState('Abel');
+function Counter(){
+  const [count, setCount] = useState(0)
 
-  return <h1>Hello, {name}.</h1>;
+  function increment(){
+    setCount(count + 1)
+  }
+
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment</button>
+    </>
+  )
 }
 
-const element = <Hello />;
-ReactDOM.render(element, document.getElementById('root'));
+const el = <Counter/>
+ReactDOM.render(el, document.getElementById('root'))
